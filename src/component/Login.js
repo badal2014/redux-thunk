@@ -45,7 +45,7 @@ class Login extends Component {
                                 </div>
                                 <div className="login-form-inner">
                                     <form onSubmit={this.handleLogin}>
-                                        <input type="email" name="email" name={"userName"} value={userName} onChange={this.handleForm} />
+                                        <input type="text" name="email" name={"userName"} value={userName} onChange={this.handleForm} />
                                         <input type="password" name="password" name={"password"} value={password} onChange={this.handleForm} />
                                         <button type="submit" class="login-btn" onClick={this.handleLogin}>Sign in With Gmail</button>
                                     </form>

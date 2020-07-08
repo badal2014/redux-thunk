@@ -7,6 +7,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+body{
+  background: #ddc3b1;
+}
 
 .App-header {
   background-color: #282c34;
@@ -23,13 +26,24 @@
   color: #61dafb;
 }
 .cc-card{
-  border-radius: 30px;
+  border-radius: 14px;
     box-shadow: 0 0 13px 0 rgba(0,0,0,.11);
-    padding: 20px 10px;
-    margin-top: 20px;
+    padding: 20px 20px;
+    // margin-top: 20px;
     color: #4a4a4a;
+    width: 85%;
+    text-align: left;
+    margin: 20px auto 10px auto;
 }
-
+.cc-card-row{
+  column-count: 3;
+  grid-column-gap: 3%;
+  column-gap: 3%;
+}
+.cc-card-main{
+  height: 100%;
+  overflow: auto;
+}
 .authfy-panel-right {
   background-color: #2d2e5ee6;
   color: #fff;
@@ -131,5 +145,17 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+.cc-card-date{
+  display: block;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .cc-card-row{
+    column-count: 2 !important;
+    grid-column-gap: 3%;
+    column-gap: 3%;
   }
 }

@@ -24,17 +24,20 @@ class Main extends Component {
         this.props.history.push({ pathname: '/ItemDetails', state: { details: item } })
     }
     render() {
+        // console.log(this.state.notes.Notes.get('notes').length)
         return (
             <div>
-                <h4>Dashboard</h4>
+                <h4>Notes</h4>
+                <h6>{Object.keys(this.state.notes).length && this.state.notes.Notes.get('notes').length} Notes</h6>
                 <button type="button" className="log-out-button" onClick={() => this.props.history.push("/")}>Log Out</button>
                 <div className={"container cards-container"}>
-                    <div className="row">
+                    <div className="cc-card-row">
                         {Object.keys(this.state.notes).length && this.state.notes.Notes.get('notes').map((_, k) => (
-                            <div className="col-md-3" key={k} onClick={() => this.handleEachItem(_)}>
-                                <div className="cc-card">
+                            <div className="cc-card-main" key={k} onClick={() => this.handleEachItem(_)}>
+                                <div className="cc-card" style={{ backgroundColor: _.color }}>
                                     <h5>{_.label}</h5>
                                     <span>{_.description}</span>
+                                    <label className="cc-card-date">{_.date}</label>
                                 </div>
                             </div>
                         ))}
